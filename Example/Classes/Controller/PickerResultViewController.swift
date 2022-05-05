@@ -80,6 +80,12 @@ class PickerResultViewController: UIViewController,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        config.allowSelectedTogether = true
+        config.maximumSelectedVideoCount = 1
+        config.maximumSelectedVideoDuration = 15
+        config.maximumSelectedPhotoCount = 3
+        config.maximumSelectedCount = 3
         collectionViewTopConstraint.constant = 20
         collectionView.register(ResultViewCell.self, forCellWithReuseIdentifier: "ResultViewCellID")
         collectionView.register(ResultAddViewCell.self, forCellWithReuseIdentifier: "ResultAddViewCellID")

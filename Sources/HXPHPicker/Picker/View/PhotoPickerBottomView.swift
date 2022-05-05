@@ -319,7 +319,26 @@ class PhotoPickerBottomView: UIToolbar, PhotoPreviewSelectedViewDelegate {
         return finishBtn
     }()
     @objc func didFinishButtonClick(button: UIButton) {
-        hx_delegate?.bottomView(didFinishButtonClick: self)
+        guard let picker = viewController?.pickerController,
+              sourceType != .browser else {
+            return
+        }
+        var selectCount = 0
+        if picker.config.selectMode == .multiple {
+            selectCount = picker.selectedAssetArray.count
+        }
+        if selectCount > 3 {
+            let  alertController =  UIAlertController (title:  "系统提示" ,
+                                                       message:  "支持上传3张图片/2张图片+1个视频" , preferredStyle: .alert )
+           let  okAction =  UIAlertAction (title:  "好的" , style: . default ,
+               handler: {
+                   action  in
+           })
+           alertController.addAction(okAction)
+            self.viewController?.present(alertController, animated:  true , completion:  nil )
+        }else{
+            hx_delegate?.bottomView(didFinishButtonClick: self)
+        }
     }
     func updatePromptView() {
         if config.showPrompt &&
