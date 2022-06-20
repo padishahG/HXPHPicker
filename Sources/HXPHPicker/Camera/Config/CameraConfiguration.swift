@@ -30,10 +30,10 @@ public class CameraConfiguration: BaseConfiguration {
     /// 视频最大录制时长
     /// takePhotoMode = .click 支持不限制最大时长 (0 - 不限制)
     /// takePhotoMode = .press 最小 1
-    public var videoMaximumDuration: TimeInterval = 60
+    public var videoMaximumDuration: TimeInterval = 14
     
     /// 视频最短录制时长
-    public var videoMinimumDuration: TimeInterval = 1
+    public var videoMinimumDuration: TimeInterval = 14
     
     /// 拍照方式
     public var takePhotoMode: TakePhotoMode = .press

@@ -456,7 +456,7 @@ extension PhotoTools {
         
         #if HXPICKER_ENABLE_CAMERA
         let cameraConfig = CameraConfiguration()
-        cameraConfig.videoMaximumDuration = 60
+        cameraConfig.videoMaximumDuration = 14
         cameraConfig.tintColor = wxColor
         config.photoList.cameraType = .custom(cameraConfig)
         #endif
