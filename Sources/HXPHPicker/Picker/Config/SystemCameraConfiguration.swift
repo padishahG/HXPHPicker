@@ -16,7 +16,7 @@ public struct SystemCameraConfiguration {
     public var mediaTypes: [String] = []
     
     /// 视频最大录制时长
-    public var videoMaximumDuration: TimeInterval = 14
+    public var videoMaximumDuration: TimeInterval = 15
     
     /// 拍摄时的视频质量
     public var videoQuality: UIImagePickerController.QualityType = .typeHigh
