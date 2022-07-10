@@ -457,7 +457,13 @@ extension PhotoTools {
         #if HXPICKER_ENABLE_CAMERA
         let cameraConfig = CameraConfiguration()
         ///修改时间
-        cameraConfig.videoMaximumDuration = 15
+      
+        if  let voiceSecondString =  UserDefaults.standard.value(forKey: "videoSecond") as? String,let voiceSecond = Int(voiceSecondString) {
+            print(voiceSecondString)
+            print(voiceSecond)
+            print(TimeInterval((voiceSecond )))
+            cameraConfig.videoMaximumDuration = TimeInterval((voiceSecond))
+        }
         cameraConfig.tintColor = wxColor
         config.photoList.cameraType = .custom(cameraConfig)
         #endif
